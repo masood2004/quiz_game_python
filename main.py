@@ -10,7 +10,7 @@ questions_len = len(question_data)
 for x in range(questions_len):
     # For Loop to retrieve the questions from data and append them into the questions_bank list.
     questions_bank.append(
-        Question(question_data[x]['text'], question_data[x]['answer']))
+        Question(question_data[x]['question'], question_data[x]['correct_answer']))
 
 
 quiz = QuizBrain(questions_bank)
