@@ -1,3 +1,4 @@
+import os
 from question_model import Question
 from data import question_data
 from quiz_brain import QuizBrain
@@ -13,4 +14,12 @@ for x in range(questions_len):
 
 
 quiz = QuizBrain(questions_bank)
-quiz.next_question()
+
+os.system('cls')  # To clear the console first
+
+# While loop to keep asking questions if available in questions bank.
+while quiz.still_has_questions():
+    quiz.next_question()
+
+print("You've completed the Quiz.")
+print(f"Your final score is: {quiz.score}/{quiz.question_number}")
